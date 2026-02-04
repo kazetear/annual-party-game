@@ -11,7 +11,8 @@
     "check": "tsc --noEmit",
     "server:dev": "nodemon --watch api --exec tsx api/server.ts",
     "dev": "concurrently \"npm run client:dev\" \"npm run server:dev\"",
-    "start": "tsx api/server.ts"
+    "start": "tsx api/server.ts",
+    "postinstall": "tsc -b || true"
   },
   "dependencies": {
     "@react-three/drei": "^9.99.0",
