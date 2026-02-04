@@ -35,6 +35,15 @@ app.use('/api/auth', authRoutes)
 app.use('/api/golden-egg', goldenEggRoutes)
 app.use('/api/horse-racing', horseRacingRoutes)
 
+// Serve static files from the React frontend app
+const clientBuildPath = path.join(__dirname, '../dist')
+app.use(express.static(clientBuildPath))
+
+// Anything that doesn't match the above, send back index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(clientBuildPath, 'index.html'))
+})
+
 /**
  * health
  */
@@ -62,11 +71,11 @@ app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
 /**
  * 404 handler
  */
-app.use((req: Request, res: Response) => {
+/* app.use((req: Request, res: Response) => {
   res.status(404).json({
     success: false,
     error: 'API not found',
   })
-})
+}) */
 
 export default app

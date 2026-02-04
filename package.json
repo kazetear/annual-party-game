@@ -12,7 +12,7 @@
     "server:dev": "nodemon --watch api --exec tsx api/server.ts",
     "dev": "concurrently \"npm run client:dev\" \"npm run server:dev\"",
     "start": "tsx api/server.ts",
-    "postinstall": "echo 'Skipping build' || exit 0"
+    "postinstall": "tsc -b && vite build"
   },
   "dependencies": {
     "@react-three/drei": "^9.99.0",
