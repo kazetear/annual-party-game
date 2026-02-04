@@ -339,7 +339,7 @@ export default function HorseRacing() {
       })
   }
 
-  const joinUrl = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/join/${sessionId}`
+  const joinUrl = `${window.location.protocol}//${window.location.hostname}${window.location.port ? ':' + window.location.port : ''}/join/${sessionId}`
 
   return (
     <div className="w-full h-screen relative bg-sky-300">
