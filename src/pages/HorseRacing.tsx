@@ -65,7 +65,7 @@ function PalaceBackground() {
                 <group key={i} position={[(i * 30) - 60, 12, 0]}>
                     {/* Roof Top */}
                     <mesh rotation={[0, 0, 0]}>
-                        <coneGeometry args={[20, 8, 4]} rotation={[0, Math.PI/4, 0]} />
+                        <coneGeometry args={[20, 8, 4]} />
                         <meshStandardMaterial color="#DAA520" /> {/* Gold Roof */}
                     </mesh>
                     {/* Eaves */}
