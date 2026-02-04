@@ -1,0 +1,1 @@
+export default function Result() { return <div className="p-4">Game Results (Loading...)</div> }
